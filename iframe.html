@@ -1,0 +1,26 @@
+<html>
+<head>
+  <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+  <script src="https://localhost/common/js.sp/cv.js"></script>
+</head>
+
+<body>
+<h2>iFrame Page</h2>
+<p id="cookie_text"></p>
+<script>
+  $(function(){
+    console.log("==Media Sample Page==");
+    document.cookie = "medeia_com_cv1=*;domain=*";
+    document.cookie = "medeia_com_cv2=coderdojo-kamakura.github.io;domain=coderdojo-kamakura.github.io";
+    document.cookie = "medeia_com_cv3=3";
+    console.log(document.cookie);
+    $('#cookie_text').text(document.cookie);
+  });
+</script>
+
+</body>
+</html>
+
