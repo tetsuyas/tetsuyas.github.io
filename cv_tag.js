@@ -44,7 +44,7 @@ loadScript("https://code.jquery.com/jquery-3.3.1.min.js", function(){
 
     document.cookie.split(';').forEach(function(c) {
       key = c.trim().split('=')[0];
-      if (key === "medeia_com_cv"){
+      if (key === "media_com_cv"){
         var t = "広告効果を測定しました。" + c.trim().split('=')[1] +"にクリックした広告です。";
       }else{
         var t = "広告効果は測定できません。";
