@@ -8,6 +8,7 @@
 
 <body>
 <script>
+  var cookie_name = "medeia_com_cv";
   var clear_cookie = function(){
     document.cookie = cookie_name+"=1; max-age=0";
     console.log(document.cookie);
@@ -20,11 +21,9 @@
   };
 
   $(function(){
-    var cookie_name = "medeia_com_cv";
     console.log("==Media Sample Page==");
     console.log(document.cookie);
     $('#cookie_text').text(document.cookie);
-
   });
 </script>
 
