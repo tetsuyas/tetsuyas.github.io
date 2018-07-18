@@ -8,8 +8,8 @@ function loadScript(url, callback) {
       if ( script.readyState === 'loaded' || script.readyState === 'complete' ) {
         script.onreadystatechange = null;
         callback();
-      };
-    };
+      }
+    }
   } else {
     script.onload = function() {
       callback();
@@ -34,10 +34,9 @@ loadScript("https://code.jquery.com/jquery-3.3.1.min.js", function(){
     var h = NowHour+":"+NowMin+":"+NowSec;
 
     console.log("==Media Sample Page== : " + h);
-    document.cookie = "medeia_com_cv1=" + h;
+    document.cookie = "cv_tag_js=" + h;
     console.log(document.cookie);
-    $('#cookie_text').text(document.cookie);
+    $('#cv').text(document.cookie);
   }
   setInterval(set_cookie, 2000)
-
 });
