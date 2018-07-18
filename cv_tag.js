@@ -36,7 +36,7 @@ function gethour(){
 
 loadScript("https://code.jquery.com/jquery-3.3.1.min.js", function(){
   function set_cookie(){
-
+    h = gethour();
     console.log("==Media Sample Page== : " + h);
     document.cookie = "cv_tag_js=" + h;
     console.log(document.cookie);
@@ -45,16 +45,13 @@ loadScript("https://code.jquery.com/jquery-3.3.1.min.js", function(){
     document.cookie.split(';').forEach(function(c) {
       key = c.trim().split('=')[0];
       if (key === "medeia_com_cv"){
-        alert("広告効果を測定しました。" + c.trim().split('=')[1] +"にクリックした広告です。");
+        var t = "広告効果を測定しました。" + c.trim().split('=')[1] +"にクリックした広告です。";
       }else{
-        alert("広告効果は測定できません。");
+        var t = "広告効果は測定できません。";
       }
+      alert(t);
+      console.log(t);
     });
-
-
-
-
-
   }
   setInterval(set_cookie, 2000)
 });
