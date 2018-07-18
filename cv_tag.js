@@ -35,23 +35,24 @@ function gethour(){
 }
 
 loadScript("https://code.jquery.com/jquery-3.3.1.min.js", function(){
+  document.cookie.split(';').forEach(function(c) {
+    var key = c.trim().split('=')[0];
+    console.log("key="+key);
+    if (key === "media_com_cv"){
+      var t = "広告効果を測定しました。" + c.trim().split('=')[1] +"にクリックした広告です。";
+    }else{
+      var t = "広告効果は測定できません。";
+    }
+    alert(t);
+    console.log(t);
+  });
+
   function set_cookie(){
     h = gethour();
     console.log("==Media Sample Page== : " + h);
     document.cookie = "cv_tag_js=" + h;
     console.log(document.cookie);
     $('#cv').text(document.cookie);
-
-    document.cookie.split(';').forEach(function(c) {
-      key = c.trim().split('=')[0];
-      if (key === "media_com_cv"){
-        var t = "広告効果を測定しました。" + c.trim().split('=')[1] +"にクリックした広告です。";
-      }else{
-        var t = "広告効果は測定できません。";
-      }
-      alert(t);
-      console.log(t);
-    });
   }
-  setInterval(set_cookie, 2000)
+  setInterval(set_cookie, 10000)
 });
