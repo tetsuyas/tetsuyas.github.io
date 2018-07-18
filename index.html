@@ -12,7 +12,7 @@
 <p>Current cookie: <span id="cookie_text"></span></p>
 <a href="#" onclick="clear_cookie()">クッキーを削除する</a>
 
-<a href="https://coderdojo-kamakura.github.io/lp.html" onclick="set_cookie()">広告をクリックする</a>
+<a href="#" onclick="set_cookie()">広告をクリックする</a>
 
 <script>
   $(function(){
@@ -28,7 +28,8 @@
     }
     function set_cookie(){
       document.cookie = cookie_name+"=1";
-      alert("LPへ遷移します。")
+      alert("LPへ遷移します。");
+      window.location.href = "https://coderdojo-kamakura.github.io/lp.html";
     }
 
   });
