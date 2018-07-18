@@ -10,27 +10,40 @@
 <h2>iFrame Page</h2>
 <p id="cookie_text"></p>
 <script>
-$(function(){
-  function set_cookie(){
-    var Nowymdhms　=　new Date();
-    var NowHour = Nowymdhms.getHours();
-    var NowMin = Nowymdhms.getMinutes();
-    var NowSec = Nowymdhms.getSeconds();
-    if(NowHour < 10){
-      NowHour = "0"+NowHour;
-    }
-    if(NowMin < 10){
-      NowMin = "0"+NowMin;
-    }
-    var h = NowHour+":"+NowMin+":"+NowSec;
-
-    console.log("==Media Sample Page== : " + h);
-    document.cookie = "medeia_com_cv1=" + h;
-    console.log(document.cookie);
-    $('#cookie_text').text(document.cookie);
+function gethour(){
+  var Nowymdhms　=　new Date();
+  var NowHour = Nowymdhms.getHours();
+  var NowMin = Nowymdhms.getMinutes();
+  var NowSec = Nowymdhms.getSeconds();
+  if(NowHour < 10){
+    NowHour = "0"+NowHour;
   }
-  setInterval(set_cookie, 2000)
+  if(NowMin < 10){
+    NowMin = "0"+NowMin;
+  }
+  var h = NowHour+":"+NowMin+":"+NowSec;
+  return h;
+}
+
+$(function(){
+  var h = gethour();
+  console.log("==Media iFrame== : " + h);
+  console.log(document.cookie);
+  $('#cookie_text').text(document.cookie);
 });
+
+document.cookie.split(';').forEach(function(c) {
+  var key = c.trim().split('=')[0];
+  console.log("key="+key);
+  if (key === "media_com_cv"){
+    var t = "広告効果を測定しました。" + c.trim().split('=')[1] +"にクリックした広告です。";
+  }else{
+    var t = "広告効果は測定できません。";
+  }
+  alert(t);
+  console.log(t);
+});
+
 </script>
 </body>
 </html>
