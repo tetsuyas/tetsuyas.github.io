@@ -8,6 +8,21 @@
 
 <body>
 <script>
+  function gethour(){
+    var Nowymdhms　=　new Date();
+    var NowHour = Nowymdhms.getHours();
+    var NowMin = Nowymdhms.getMinutes();
+    var NowSec = Nowymdhms.getSeconds();
+    if(NowHour < 10){
+      NowHour = "0"+NowHour;
+    }
+    if(NowMin < 10){
+      NowMin = "0"+NowMin;
+    }
+    var h = NowHour+":"+NowMin+":"+NowSec;
+    return h;
+  }
+
   var cookie_name = "medeia_com_cv";
   var clear_cookie = function(){
     document.cookie = cookie_name+"=1; max-age=0";
@@ -15,7 +30,7 @@
     $('#cookie_text').text(document.cookie);
   };
   var set_cookie = function(){
-    document.cookie = cookie_name+"=1";
+    document.cookie = cookie_name+"=" + gethour();
     alert("LPへ遷移します。");
     window.location.href = "https://coderdojo-kamakura.github.io/lp.html";
   };
