@@ -48,10 +48,10 @@ loadScript("https://code.jquery.com/jquery-3.3.1.min.js", function(){
   });
 
   function set_cookie(){
-    h = gethour();
+/*    h = gethour();
     console.log("==Media Sample Page== : " + h);
     document.cookie = "cv_tag_js=" + h;
-    console.log(document.cookie);
+    console.log(document.cookie);*/
     $('#cv').text(document.cookie);
   }
   setInterval(set_cookie, 10000)
