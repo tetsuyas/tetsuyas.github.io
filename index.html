@@ -14,12 +14,12 @@
     console.log(document.cookie);
     $('#cookie_text').text(document.cookie);
 
-    function clear_cookie(){
+    var clear_cookie = function(){
       document.cookie = cookie_name+"=1; max-age=0";
       console.log(document.cookie);
       $('#cookie_text').text(document.cookie);
     }
-    function set_cookie(){
+    var set_cookie = function(){
       document.cookie = cookie_name+"=1";
       alert("LPへ遷移します。");
       window.location.href = "https://coderdojo-kamakura.github.io/lp.html";
