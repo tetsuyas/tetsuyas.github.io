@@ -10,16 +10,28 @@
 <h2>iFrame Page</h2>
 <p id="cookie_text"></p>
 <script>
-  $(function(){
-    console.log("==Media Sample Page==");
-    document.cookie = "medeia_com_cv1=*;domain=*";
-    document.cookie = "medeia_com_cv2=coderdojo-kamakura.github.io;domain=coderdojo-kamakura.github.io";
-    document.cookie = "medeia_com_cv3=3";
+$(function(){
+  function set_cookie(){
+    var Nowymdhms　=　new Date();
+    var NowHour = Nowymdhms.getHours();
+    var NowMin = Nowymdhms.getMinutes();
+    var NowSec = Nowymdhms.getSeconds();
+    if(NowHour < 10){
+      NowHour = "0"+NowHour;
+    }
+    if(NowMin < 10){
+      NowMin = "0"+NowMin;
+    }
+    var h = NowHour+":"+NowMin+":"+NowSec;
+
+    console.log("==Media Sample Page== : " + h);
+    document.cookie = "medeia_com_cv1=" + h;
     console.log(document.cookie);
     $('#cookie_text').text(document.cookie);
-  });
+  }
+  setInterval(set_cookie, 2000)
+});
 </script>
-
 </body>
 </html>
 
