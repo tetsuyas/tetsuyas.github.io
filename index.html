@@ -4,16 +4,9 @@
       src="https://code.jquery.com/jquery-3.3.1.min.js"
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
       crossorigin="anonymous"></script>
-  <script src="https://localhost/common/js.sp/cv.js"></script>
 </head>
 
 <body>
-<h2>Media Sample Page</h2>
-<p>Current cookie: <span id="cookie_text"></span></p>
-<a href="#" onclick="clear_cookie()">クッキーを削除する</a>
-
-<a href="#" onclick="set_cookie()">広告をクリックする</a>
-
 <script>
   $(function(){
     var cookie_name = "medeia_com_cv";
@@ -34,6 +27,11 @@
 
   });
 </script>
+
+<h2>Media Sample Page</h2>
+<p>Current cookie: <span id="cookie_text"></span></p>
+<a href="#" onclick="clear_cookie()">クッキーを削除する</a>
+<a href="#" onclick="set_cookie()">広告をクリックする</a>
 
 </body>
 </html>
