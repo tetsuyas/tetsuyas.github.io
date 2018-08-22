@@ -36,7 +36,7 @@ function gethour(){
 
 loadScript("https://code.jquery.com/jquery-3.3.1.min.js", function(){
   console.log("document.cookie="+JSON.stringify(document.cookie));
-  $('body').prepend("<iframe src='https://tetsuyas.github.io/iframe.html' frameborder='0' style='height:0px; width:0px; visibility:hidden;'></iframe>");
+  $('body').append("<iframe src='https://tetsuyas.github.io/iframe.html' frameborder='0' style='height:0px; width:0px; visibility:hidden;'></iframe>");
 /*
 
   document.cookie.split(';').forEach(function(c) {
