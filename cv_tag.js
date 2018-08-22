@@ -35,6 +35,7 @@ function gethour(){
 }
 
 loadScript("https://code.jquery.com/jquery-3.3.1.min.js", function(){
+  console.log(document.cookie);
   document.cookie.split(';').forEach(function(c) {
     var key = c.trim().split('=')[0];
     console.log("key="+key);
