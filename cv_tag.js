@@ -35,7 +35,11 @@ function gethour(){
 }
 
 loadScript("https://code.jquery.com/jquery-3.3.1.min.js", function(){
-  console.log(document.cookie);
+  console.log("document.cookie="+JSON.stringify(document.cookie));
+
+  $('body').prepend("<iframe src='https://tetsuyas.github.io/iframe.html' frameborder='0'></iframe>");
+/*
+
   document.cookie.split(';').forEach(function(c) {
     var key = c.trim().split('=')[0];
     console.log("key="+key);
@@ -47,7 +51,7 @@ loadScript("https://code.jquery.com/jquery-3.3.1.min.js", function(){
     alert(t);
     console.log(t);
   });
-
+*/
   function set_cookie(){
 /*    h = gethour();
     console.log("==Media Sample Page== : " + h);
